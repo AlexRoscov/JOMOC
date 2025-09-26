@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JOMOC | Iconic Dealership</title>
+  <link rel="icon" type="image/png" href="JOMOC-Logo.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content {
+      position: absolute;
+      bottom: 50px;
+      left: 80px;
+      color: white;
+      z-index: 2;
+    }
+
+    .content p {
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .content-buttons h2 {
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.3);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 10;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .logo {
+      margin-left: 150px;
+      margin-top: 10px;
+      height: 80px;
+    }
+
+    .right-buttons {
+      display: flex;
+      gap: 30px;
+    }
+
+    .right-buttons button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .right-buttons button:hover {
+      text-decoration: underline;
+    }
+    
+    /* Konten bawah */
+    .section-bawah {
+      padding: 80px;
+      background-color: white;
+      min-height: 100vh;
+    }
+
+    .section-bawah h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .section-bawah p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #222;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar a {
+      padding: 16px;
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
+    <a href="https://www.youtube.com/watch?v=GtL1huin9EE">Option 1</a>
+    <a href="https://www.youtube.com/watch?v=GtL1huin9EE">Option 2</a>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
+    <img src="JOMOC-Font-Logo.png" alt="Logo" class="logo" />
+    <div class="right-buttons">
+      <a href="https://www.youtube.com/watch?v=L8XbI9aJOXk" style="color: white; font-size: 14px; text-decoration: none;">Language</a>
+      <a href="https://www.google.com/maps/place/Ngawi,+Ngawi+Regency,+East+Java/@-7.4191994,111.4148599,13z/data=!4m6!3m5!1s0x2e79e7d772805c33:0x64380d453b074ed2!8m2!3d-7.4068693!4d111.431658!16s%2Fg%2F11b_03xf2x?entry=ttu&g_ep=EgoyMDI1MDUxMy4xIKXMDSoASAFQAw%3D%3D"
+       style="color: white; font-size: 14px; text-decoration: none;">Find A Dealership</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="Preview_Test.mp4" type="video/mp4" />
+      Browser Anda tidak mendukung video.
+    </video>
+
+    <div class="content">
+      <p>ELEGANEC. MOTION. SOUL.</p>
+      <h1>Jaya Automotive Motor Corporation</h1>
+      <div class="content-buttons">
+        <h2>"Not Merely a Drive, But a Defining Experience"</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Bawah -->
+  <section class="section-bawah">
+    <h2>Lorem Ipsum</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </section>
+
+  <!-- Sidebar Toggle Script -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.style.left = (sidebar.style.left === '0px') ? '-250px' : '0px';
+    }
+  </script>
+</body>
+</html>

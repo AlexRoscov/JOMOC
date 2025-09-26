@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jester RR Specifications</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .car-image {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .specs {
+      margin-top: 20px;
+    }
+
+    .specs h2 {
+      border-bottom: 2px solid white;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #333;
+    }
+
+    .spec-name {
+      font-weight: bold;
+    }
+
+    .nav {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #999;
+    }
+
+    .nav span {
+      margin: 0 5px;
+    }
+
+    .stats {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .stat {
+      flex: 1;
+      text-align: center;
+    }
+
+    .stat-bar {
+      background-color: #333;
+      height: 10px;
+      position: relative;
+      margin-top: 5px;
+    }
+
+    .stat-bar-fill {
+      background-color: white;
+      height: 100%;
+      width: 80%; /* adjust for each stat */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">Home <span>></span> Manufacturer <span>></span> Dinka <span>></span> Jester RR</div>
+    <h1>JESTER RR</h1>
+    <img src="img/Dodge.png" alt="Jester RR" class="car-image">
+
+    <div class="stats">
+      <div class="stat">
+        <div>SPEED</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width: 90%;"></div></div>
+      </div>
+      <div class="stat">
+        <div>ACCELERATION</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width: 85%;"></div></div>
+      </div>
+      <div class="stat">
+        <div>BRAKING</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width: 70%;"></div></div>
+      </div>
+      <div class="stat">
+        <div>HANDLING</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width: 80%;"></div></div>
+      </div>
+    </div>
+
+    <div class="specs">
+      <h2>SPECIFICATIONS:</h2>
+      <div class="spec-row"><div class="spec-name">Engine:</div><div>2,998 cc</div></div>
+      <div class="spec-row"><div class="spec-name">Ratio Compression</div><div>10,2 : 1</div></div>
+      <div class="spec-row"><div class="spec-name">Horsepower</div><div>400 hp</div></div>
+      <div class="spec-row"><div class="spec-name">Fuel System</div><div>Direct Injection</div></div>
+      <div class="spec-row"><div class="spec-name">Transmission</div><div>8 AT</div></div>
+      <div class="spec-row"><div class="spec-name">Turbocharger</div><div>Twin-Scroll Turbochager</div></div>
+      <div class="spec-row"><div class="spec-name">Engine Type</div><div>B58</div></div>
+    </div>
+  </div>
+</body>
+</html>

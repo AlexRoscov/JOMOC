@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOMOC Automotive | Jester RR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #c8a97e; /* Gold accent */
+            --secondary-color: #1e1e1e;
+            --text-color: #e0e0e0;
+            --dark-bg: #0a0a0a;
+            --darker-bg: #050505;
+            --card-bg: #141414;
+            --border-color: #2a2a2a;
+            --highlight: #c8a97e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--dark-bg);
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(200, 169, 126, 0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 400;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 0;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--darker-bg);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--darker-bg);
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: #d4b78e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(200, 169, 126, 0.3);
+        }
+        
+        .hero {
+            height: 100vh;
+            background-color: var(--darker-bg);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-size: 64px;
+            font-weight: 200;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        
+        .hero-title span {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
+        }
+        
+        .section {
+            padding: 120px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 60px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #fff;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary-color);
+            margin: 20px auto 0;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .feature {
+            background-color: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 0;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background-color: var(--primary-color);
+            transition: height 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature:hover:before {
+            height: 100%;
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .feature-desc {
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        .specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .specs-image {
+            width: 100%;
+            border-radius: 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s;
+        }
+        
+        .specs-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .specs-content h2 {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: #fff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .specs-content h2 span {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .specs-list {
+            list-style: none;
+        }
+        
+        .specs-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .specs-item:last-child {
+            border-bottom: none;
+        }
+        
+        .specs-label {
+            font-weight: 400;
+            color: #aaa;
+        }
+        
+        .specs-value {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .performance-section {
+            background-color: var(--secondary-color);
+            padding: 120px 5%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .performance-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23000" fill-opacity="0.03"/><path d="M0 0L100 100" stroke="%23fff" stroke-width="0.5" stroke-opacity="0.05"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .performance-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .performance-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .performance-card {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 0;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+        }
+        
+        .performance-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .performance-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .progress-container {
+            margin-bottom: 30px;
+        }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .progress-name {
+            font-weight: 400;
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        .progress-value {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 0;
+            position: relative;
+        }
+        
+        .progress:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #fff;
+            opacity: 0.5;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 120px 5%;
+            background-color: var(--darker-bg);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(200, 169, 126, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-title {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .cta-title span {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .cta-subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 50px;
+            opacity: 0.8;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .btn-white {
+            background-color: #fff;
+            color: var(--darker-bg);
+        }
+        
+        .btn-white:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-outline-white {
+            border: 1px solid #fff;
+            color: #fff;
+            background: transparent;
+        }
+        
+        .btn-outline-white:hover {
+            background-color: #fff;
+            color: var(--darker-bg);
+        }
+        
+        .footer {
+            background-color: var(--darker-bg);
+            color: #aaa;
+            padding: 80px 5% 40px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+        
+        .footer-desc {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 0;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .social-icon:hover svg {
+            stroke: var(--darker-bg);
+        }
+        
+        .footer-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #fff;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .footer-links a:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 1px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-links a:hover:before {
+            width: 10px;
+        }
+        
+        .footer-contact {
+            list-style: none;
+        }
+        
+        .footer-contact li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+            align-items: flex-start;
+        }
+        
+        .footer-contact li svg {
+            margin-top: 3px;
+            color: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 40px;
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        .footer-copyright {
+            margin-bottom: 0;
+        }
+        
+        .footer-terms a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+        
+        .footer-terms a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Animated elements */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .animated-line {
+            position: absolute;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
+            opacity: 0.2;
+        }
+        
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .specs {
+                grid-template-columns: 1fr;
+            }
+            
+            .performance-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .footer-terms a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg">
+        <div class="animated-line" style="height: 30%; left: 20%; animation: moveDown 15s infinite linear;"></div>
+        <div class="animated-line" style="height: 40%; left: 50%; animation: moveDown 20s infinite linear;"></div>
+        <div class="animated-line" style="height: 35%; left: 80%; animation: moveDown 17s infinite linear;"></div>
+    </div>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="logo">JOMOC<span>.</span></a>
+            <div class="nav-links">
+                <a href="#">Models</a>
+                <a href="#">Performance</a>
+                <a href="#">Technology</a>
+                <a href="#">Ownership</a>
+                <a href="#">About</a>
+            </div>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-outline">Build Yours</a>
+                <a href="#" class="btn btn-primary">Test Drive</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-05-21%20at%2011.13.23_d185f248.jpg-we5V9p9OIcIRzdu70QdcKBEocYoUrL.jpeg" alt="Jester RR" class="hero-image">
+        <div class="hero-content">
+            <h1 class="hero-title">The All-New <span>Jester RR</span></h1>
+            <p class="hero-subtitle">Redefining performance with cutting-edge technology and unmatched driving dynamics</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Explore</a>
+                <a href="#" class="btn btn-outline-white">Specifications</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Exceptional Features</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Lightning Fast</h3>
+                <p class="feature-desc">0-60 mph in just 3.2 seconds with advanced launch control system for consistent performance.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title">Advanced Safety</h3>
+                <p class="feature-desc">Comprehensive safety systems including adaptive cruise control and emergency braking.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔋</div>
+                <h3 class="feature-title">Efficient Power</h3>
+                <p class="feature-desc">Twin-scroll turbocharger delivers exceptional power while maintaining impressive fuel efficiency.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="specs">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-05-21%20at%2011.13.23_d185f248.jpg-we5V9p9OIcIRzdu70QdcKBEocYoUrL.jpeg" alt="Jester RR Engine" class="specs-image">
+            <div class="specs-content">
+                <h2>Technical <span>Specifications</span></h2>
+                <ul class="specs-list">
+                    <li class="specs-item">
+                        <span class="specs-label">Engine</span>
+                        <span class="specs-value">2,998 cc</span>
+                    </li>
+                    <li class="specs-item">
+                        <span class="specs-label">Ratio Compression</span>
+                        <span class="specs-value">10.2:1</span>
+                    </li>
+                    <li class="specs-item">
+                        <span class="specs-label">Horsepower</span>
+                        <span class="specs-value">400 hp</span>
+                    </li>
+                    <li class="specs-item">
+                        <span class="specs-label">Fuel System</span>
+                        <span class="specs-value">Direct Injection</span>
+                    </li>
+                    <li class="specs-item">
+                        <span class="specs-label">Transmission</span>
+                        <span class="specs-value">8 AT</span>
+                    </li>
+                    <li class="specs-item">
+                        <span class="specs-label">Turbocharger</span>
+                        <span class="specs-value">Twin-Scroll Turbocharger</span>
+                    </li>
+                    <li class="specs-item">
+                        <span class="specs-label">Engine Type</span>
+                        <span class="specs-value">B58</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="performance-section">
+        <div class="performance-container">
+            <h2 class="section-title">Performance Metrics</h2>
+            <div class="performance-grid">
+                <div class="performance-card">
+                    <h3 class="performance-title">Driving Dynamics</h3>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span class="progress-name">Speed</span>
+                            <span class="progress-value">85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span class="progress-name">Acceleration</span>
+                            <span class="progress-value">80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="performance-card">
+                    <h3 class="performance-title">Control Systems</h3>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span class="progress-name">Braking</span>
+                            <span class="progress-value">65%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 65%;"></div>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span class="progress-name">Handling</span>
+                            <span class="progress-value">75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">Experience the <span>Jester RR</span> Today</h2>
+            <p class="cta-subtitle">Schedule a test drive at your nearest JOMOC dealership and feel the power yourself.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Book Test Drive</a>
+                <a href="#" class="btn btn-outline-white">Build & Price</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">JOMOC<span>.</span></div>
+                <p class="footer-desc">Crafting exceptional driving experiences through innovation, performance, and design excellence since 1978.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="footer-title">Models</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Jester RR</a></li>
+                    <li><a href="#">Jester Classic</a></li>
+                    <li><a href="#">Dominator GT</a></li>
+                    <li><a href="#">Banshee 900R</a></li>
+                    <li><a href="#">Comet S2</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Contact</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>123 Performance Drive, Los Santos</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>info@jomoc.com</span>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>+1 (555) 123-4567</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2025 JOMOC Automotive. All rights reserved.</p>
+            <div class="footer-terms">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Sticky header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        // Create animated background lines
+        function createAnimatedLines() {
+            const bg = document.querySelector('.animated-bg');
+            for (let i = 0; i < 5; i++) {
+                const line = document.createElement('div');
+                line.classList.add('animated-line');
+                line.style.height = Math.random() * 30 + 20 + '%';
+                line.style.left = Math.random() * 100 + '%';
+                line.style.animationDuration = Math.random() * 10 + 15 + 's';
+                line.style.animationDelay = Math.random() * 5 + 's';
+                bg.appendChild(line);
+            }
+        }
+        
+        // Add animation styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes moveDown {
+                0% { transform: translateY(-100%); }
+                100% { transform: translateY(1000%); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize animations
+        window.addEventListener('load', createAnimatedLines);
+    </script>
+</body>
+</html>

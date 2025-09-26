@@ -1,0 +1,6 @@
+.text-kiri {
+  text-align: left;
+  width: 100%;
+  margin: 0;          /* pastikan tidak auto center */
+  padding: 0 20px;     /* biar nggak nempel ke tepi */
+}
