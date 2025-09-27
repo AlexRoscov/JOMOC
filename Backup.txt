@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JOMOC | Iconic Dealership</title>
+  <link rel="icon" type="image/png" href="JOMOC-Logo.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+      background-color: white;
+      color: #111;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.3);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 10;
+      color: white;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .logo {
+      margin-left: 150px;
+      margin-top: 10px;
+      height: 80px;
+    }
+
+    .right-buttons {
+      display: flex;
+      gap: 30px;
+    }
+
+    .right-buttons a {
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .right-buttons a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      margin-top: 60px; /* agar navbar tidak menutup */
+      background: black;
+      z-index: 0;
+    }
+
+    .hero video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .content {
+      position: absolute;
+      bottom: 50px;
+      left: 80px;
+      color: white;
+      z-index: 2;
+    }
+
+    .content p {
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .content-buttons h2 {
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+    /* Section Bawah */
+    .section-bawah {
+      padding: 40px 80px 80px;
+      background-color: white;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .section-bawah h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .section-bawah p {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 50px auto;
+      text-align: justify;
+    }
+
+    /* Models Section */
+    .models {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .model-card {
+      width: 350px;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      text-align: left;
+      font-family: 'Arial', sans-serif;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .model-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+    
+    .model-image {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .model-info {
+      padding: 15px;
+      background-color: #111;
+      color: white;
+      font-size: 14px;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.4;
+      position: relative;
+    }
+
+    .model-info .model-name {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    /* Judul Models */
+    .models-title {
+      font-family: 'Arial', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="menu-icon">&#9776;</div>
+    <img src="JOMOC-Font-Logo.png" alt="Logo" class="logo" />
+    <div class="right-buttons">
+      <a href="JOMOC-Uncore0.1(Indo).html">Language</a>
+      <a href="https://maps.app.goo.gl/N1rNbN8eMatWUVt9A">Find A Dealership</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="Preview_Test.mp4" type="video/mp4" />
+      Browser Anda tidak mendukung video.
+    </video>
+
+    <div class="content">
+      <p>ELEGANCE. MOTION. SOUL.</p>
+      <h1>Jaya Automotive Motor Corporation</h1>
+      <div class="content-buttons">
+        <h2>"Not Merely a Drive, But a Defining Experience"</h2>
+      </div>
+    </div>
+  </section>
+
+<section class="section-bawah">
+  <div style="text-align: center;">
+    <h2>What Is JOMOC ?</h2>
+    <p style="text-align: center;">
+      JOMOC (Jaya Otomotive Motor Corporation) is a premier general importer specializing 
+      in rare and exclusive automobiles that are typically unavailable in the Indonesian market. 
+      With a strong commitment to quality and authenticity, JOMOC sources iconic vehicles from 
+      around the globe, bringing enthusiasts closer to their dream cars. Whether you're looking 
+      for high-performance machines, timeless classics, or limited-production models, JOMOC offers 
+      an unmatched selection backed by professional service and trusted expertise.
+    </p>
+  </div>
+
+  <div class="models-title">NEW MODELS</div>
+
+  <div class="models">
+  <a href="cars/Dodge.html" style="text-decoration: none; color: inherit;">
+    <div class="model-card">
+      <img src="img/Dodge.png" alt="911" class="model-image" />
+      <div class="model-info">
+        <div class="model-name">Dodge Challenger</div>
+        <div>A retro-styled icon that roars with legendary muscle.</div>
+        <div><small>From $69,990</small></div>
+      </div>  
+    </div>
+  </a>
+
+  <a href="../JOMOC/cars/Porsche.html" style="text-decoration: none; color: inherit;">
+    <div class="model-card">
+      <img src="img/Porsche.png" alt="718" class="model-image" />
+      <div class="model-info">
+        <div class="model-name">Porsche 718</div>
+        <div>The mid-engine sports car for two made for pure driving pleasure.</div>
+        <div><small>From $96,800</small></div>
+      </div>
+    </div>
+  </a>
+
+  <a href="cars/R35.html" style="text-decoration: none; color: inherit;">
+    <div class="model-card">
+      <img src="img/R35.png" alt="R35" class="model-image" />
+      <div class="model-info">
+        <div class="model-name">Nissan GT-R R35</div>
+        <div>A technological powerhouse bred for speed and sharpened by legacy.</div>
+        <div><small>From $120,990</small></div>
+      </div>  
+    </div>
+  </a>
+
+    <a href="cars/LaFerrari.html" style="text-decoration: none; color: inherit;">
+    <div class="model-card">
+      <img src="img/LaFerrari.png" alt="LaFerrari" class="model-image" />
+      <div class="model-info">
+        <div class="model-name">LaFerrari</div>
+        <div>A hybrid hypercar sculpted for speed, precision, and awe.</div>
+        <div><small>From $1,420,000</small></div>
+      </div>  
+    </div>
+  </a>
+</div>
+</section>
+</body>
+</html>
