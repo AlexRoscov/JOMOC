@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JOMOC | About Us</title>
+  <link rel="icon" type="image/png" href="JOMOC-Logo.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background-color: white;
+      color: #111;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.6);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 10;
+      color: white;
+    }
+
+    .right-buttons {
+      display: flex;
+      gap: 30px;
+    }
+
+     .right-buttons a {
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .right-buttons a:hover {
+      text-decoration: underline;
+    }
+
+    .navbar-left, .navbar-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .logo {
+      height: 80px;
+      margin-top: 10px;
+    }
+
+    .right-buttons button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .right-buttons button:hover {
+      text-decoration: underline;
+    }
+
+    /* Section Bawah */
+    .section-bawah {
+      padding: 100px 80px 80px;
+      background-color: white;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .section-bawah h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .section-bawah p {
+      font-size: 20px;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+      text-align: justify;
+    }
+
+    /* Container semua profil */
+    .profiles {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      margin-top: 50px;
+    }
+
+    /* Profil */
+    .profile-container {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      justify-content: flex-start;
+    }
+
+    .profile-photo img {
+      width: 250px;
+      height: auto;
+      border-radius: 12px; 
+      display: block;
+    }
+
+    .profile-info {
+      text-align: left;
+      max-width: 500px;
+    }
+
+    .profile-info h3 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .role {
+      font-size: 22px;
+      font-weight: bold;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .profile-info p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 20px; /* lebih besar */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-left"></div>
+    <div class="navbar-center">
+      <img src="JOMOC-Font-Logo.png" alt="Logo" class="logo" />
+    </div>
+    <div class="navbar-right">
+      <div class="right-buttons">
+         <a href="index.html">Return</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section What Is JOMOC -->
+  <section class="section-bawah">
+    <h2>Who are we ?</h2>
+    <p>
+      JOMOC (Jaya Otomotive Motor Corporation) is a premier general importer specializing 
+      in rare and exclusive automobiles that are typically unavailable in the Indonesian market. 
+      With a strong commitment to quality and authenticity, JOMOC sources iconic vehicles from 
+      around the globe, bringing enthusiasts closer to their dream cars. Whether you're looking 
+      for high-performance machines, timeless classics, or limited-production models, JOMOC offers 
+      an unmatched selection backed by professional service and trusted expertise.
+    </p>
+
+    <!-- Semua Profil -->
+    <div class="profiles">
+
+      <!-- Profil 1 -->
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img src="ADAM.png" alt="Foto Profil 1">
+        </div>
+        <div class="profile-info">
+          <h3>ADAM FAIZAL</h3>
+          <div class="role">Founder</div>
+          <p>The visionary behind JOMOC, leading the company with 
+            innovation and dedication to bring rare and exclusive 
+            automobiles closer to enthusiasts in Indonesia.</p>
+          <div class="contacts">
+            <span>📱 WhatsApp: +62 852-2577-9194</span>
+            <span>📷 Instagram: @damfzal</span>
+            <span>✉️ Email: adamfaizal@example.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profil 2 -->
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img src="ADAM-NUR.png" alt="Foto Profil 2">
+        </div>
+        <div class="profile-info">
+          <h3>Adam Nur Cahya Putra</h3>
+          <div class="role">Frontend Developer</div>
+          <p>Focused on crafting responsive and user-friendly 
+            interfaces to ensure a seamless browsing experience for 
+            JOMOC’s customers.</p>
+          <div class="contacts">
+            <span>📱 WhatsApp: +62 819-1146-5619</span>
+            <span>📷 Instagram: @adam_nptra</span>
+            <span>✉️ Email: adamnurcahyaputra@example.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profil 3 -->
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img src="FARREL-NANDANA.png" alt="Foto Profil 3">
+        </div>
+        <div class="profile-info">
+          <h3>NANDANA TSANY FARRELL ARKANANTA</h3>
+          <div class="role">Marketing</div>
+          <p>Passionate about turning designs into 
+            interactive features, supporting the team in 
+            building smooth and modern web applications.</p>
+          <div class="contacts">
+            <span>📱 WhatsApp:+62 851-7539-3742</span>
+            <span>📷 Instagram: @ozyura5</span>
+            <span>✉️ Email: farrelyesking@example.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profil 4 -->
+      <div class="profile-container">
+        <div class="profile-photo">
+          <img src="RAIHANWS.png" alt="Foto Profil 2">
+        </div>
+        <div class="profile-info">
+          <h3>MUHAMMAD RAIHAN WICAKSONO SASONGKO</h3>
+          <div class="role">Frontend Developer</div>
+          <p>Passionate about turning designs into 
+            interactive features, supporting the team in building smooth and modern web applications.</p>
+          <div class="contacts">
+            <span>📱 WhatsApp: +62 813-8160-6680</span>
+            <span>📷 Instagram: @alex_roscov</span>
+            <span>✉️ Email: raihanwicaksono@example.com</span>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+</body>
+</html>
